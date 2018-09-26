@@ -123,7 +123,7 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 
-        const oldFeed, newFeed;
+        let oldFeed, newFeed;
 
         beforeEach(function(done){
           oldFeed = [];
