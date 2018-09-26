@@ -126,21 +126,16 @@ $(function() {
         const oldFeed, newFeed;
 
         beforeEach(function(done){
+          oldFeed = [];
+          newFeed = [];
            //load first feed
-          loadFeed(0, function(){
-            firstFeed = $('.feed');
+          setTimeout(function(){
+            firstFeed = loadFeed(0)
+            secondFeed = loadFeed(1)
+            done();
+          }, 3);
 
-            //load second feed
-            loadFeed(1, function(){
-              secondFeed = $('.feed');
-              done();
-
-            });
-
-          });
-
-         });
-
+        });
         
         //To check if the feeds are not the same
         it('a new feed is loaded', function() {
