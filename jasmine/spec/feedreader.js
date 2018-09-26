@@ -129,40 +129,15 @@ $(function() {
           oldFeed = [];
           newFeed = [];
            //load first feed
-<<<<<<< HEAD
-          setTimeout(function(){
 
-            firstFeed = loadFeed(0)
-
-            secondFeed = loadFeed(1)
-            done();
-          }, 3);
-
-        });
-||||||| merged common ancestors
-          loadFeed(0, function(){
-            firstFeed = $('.feed');
-
-            //load second feed
-            loadFeed(1, function(){
-              secondFeed = $('.feed');
-              done();
-
-            });
-
-          });
-
-         });
-=======
           setTimeout(function(){
             firstFeed = loadFeed(0)
             secondFeed = loadFeed(1)
             done();
           }, 3);
->>>>>>> 0a3e8b32509a71f7f7237f02e4bba1d71f184a20
 
         });
-        
+
         //To check if the feeds are not the same
         it('a new feed is loaded', function() {
             expect(oldFeed).not.toBe(newFeed);
