@@ -123,23 +123,21 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 
-        const oldFeed, newFeed;
+        let oldFeed, newFeed;
 
         beforeEach(function(done){
+          oldFeed = [];
+          newFeed = [];
            //load first feed
-          loadFeed(0, function(){
-            firstFeed = $('.feed');
+          setTimeout(function(){
 
-            //load second feed
-            loadFeed(1, function(){
-              secondFeed = $('.feed');
-              done();
+            firstFeed = loadFeed(0)
 
-            });
+            secondFeed = loadFeed(1)
+            done();
+          }, 3);
 
-          });
-
-         });
+        });
 
         
         //To check if the feeds are not the same
