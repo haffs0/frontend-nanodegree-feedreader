@@ -53,22 +53,17 @@ $(function() {
         $body = $('body');
         });
 
-        afterEach(function() {
-        $menuIcon = null;
-        $body = null;
-        });
-
         // To check if the body has class menu-hidden
         it('the menu element is hidden by default', function() {
-            expect($body.hasClass('menu-hidden')).toBeDefined();
+            expect($body.hasClass('menu-hidden')).toBe(true);
         });
 
         // To check if the menu displayed or hide when clicked 
         it('the menu changes visibility when the menu icon is clicked', function() {
             $menuIcon.trigger('click');
-            expect($body.hasClass('menu-hidden')).toBeFalsy();
+            expect($body.hasClass('menu-hidden')).toBe(false);
             $menuIcon.trigger('click');
-            expect($body.hasClass('menu-hidden')).toBeTruthy();
+            expect($body.hasClass('menu-hidden')).toBe(true);
         });
     });
         
@@ -78,7 +73,6 @@ $(function() {
         let $feedContainer;
 
         beforeEach(function(done) {
-            $feedContainer = [];
             //load feed
             loadFeed(0, function() {
                 $feedContainer = $('.feed .entry-link');
@@ -98,8 +92,6 @@ $(function() {
         let oldFeed, newFeed;
 
         beforeEach(function(done) {
-            oldfeed = [];
-            newFeed = [];
             //load feed
             loadFeed(0, function() {
                 oldfeed = $('.feed').html();
